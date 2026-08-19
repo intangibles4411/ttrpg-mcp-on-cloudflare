@@ -27,7 +27,7 @@ export const generateLocationNameTool: ToolDefinition = {
       "temple",
     ]),
   }),
-  outputSchema: z.union([successSchema, toolErrorSchema]),
+  outputSchema: successSchema,
   async handler(ctx: ToolContext, args: unknown): Promise<unknown> {
     const { type } = args as any;
 

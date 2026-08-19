@@ -30,7 +30,7 @@ export const generateNpcNameTool: ToolDefinition = {
     ]),
     gender: z.enum(["male", "female"]),
   }),
-  outputSchema: z.union([successSchema, toolErrorSchema]),
+  outputSchema: successSchema,
   async handler(ctx: ToolContext, args: unknown): Promise<unknown> {
     const { race, gender } = args as any;
 

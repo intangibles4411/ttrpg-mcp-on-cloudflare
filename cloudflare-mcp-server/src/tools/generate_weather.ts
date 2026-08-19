@@ -18,7 +18,7 @@ export const generateWeatherTool: ToolDefinition = {
     climate: z.enum(["temperate", "arctic", "tropical", "desert", "mountain"]),
     season: z.enum(["spring", "summer", "autumn", "winter"]).optional(),
   }),
-  outputSchema: z.union([successSchema, toolErrorSchema]),
+  outputSchema: successSchema,
   async handler(ctx: ToolContext, args: unknown): Promise<unknown> {
     const { climate, season } = args as any;
 

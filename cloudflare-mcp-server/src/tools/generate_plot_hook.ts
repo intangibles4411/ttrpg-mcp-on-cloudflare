@@ -27,7 +27,7 @@ export const generatePlotHookTool: ToolDefinition = {
     ]),
     level: z.number().int().min(1).max(20).optional(),
   }),
-  outputSchema: z.union([successSchema, toolErrorSchema]),
+  outputSchema: successSchema,
   async handler(ctx: ToolContext, args: unknown): Promise<unknown> {
     const { theme, level } = args as any;
 

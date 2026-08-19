@@ -19,7 +19,7 @@ export const generateEncounterTool: ToolDefinition = {
     environment: z.enum(["forest", "dungeon", "city", "mountain", "swamp"]),
     difficulty: z.enum(["easy", "medium", "hard", "deadly"]).default("medium"),
   }),
-  outputSchema: z.union([successSchema, toolErrorSchema]),
+  outputSchema: successSchema,
   async handler(ctx: ToolContext, args: unknown): Promise<unknown> {
     const { level, environment, difficulty } = args as any;
 
